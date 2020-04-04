@@ -4,7 +4,7 @@
 #include <iostream>
 
 template<typename T>
-List<T>::Element::Element(T data) : _data(data), _next(NULL) {}
+List<T>::Element::Element(T data) : _next(NULL), _data(data) {}
 
 template<typename T>
 List<T>::List() : _start(NULL) {}
@@ -55,6 +55,8 @@ int List<T>::size()
   }
 
   Element* traverse = _start;
+  ++size;
+  
   while(traverse->_next != NULL)
   {
     ++size;

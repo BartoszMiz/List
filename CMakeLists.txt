@@ -26,7 +26,7 @@ set(TEST_BINARY_FILES $<TARGET_OBJECTS:source_objects_lib>
                       ${TEST_FILES}
                       ${MAIN_TEST})
 
-add_executable(my_list_UT "test.cpp" "Source/List.cpp")
+add_executable(my_list_UT "test.cpp" "Source/List.cpp" "Test/ListTest.cpp")
 target_link_libraries(my_list_UT 	${GTEST_MAIN_LIBRARY}
                                                 ${GTEST_LIBRARY}
                                                 ${GMOCK_MAIN_LIBRARY}
