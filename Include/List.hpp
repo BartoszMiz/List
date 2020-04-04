@@ -14,7 +14,6 @@ private:
   };
 
   Element* _start;
-  uint _size;
   
 public:
   List();

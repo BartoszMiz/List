@@ -7,12 +7,12 @@ template<typename T>
 List<T>::Element::Element(T data) : _data(data), _next(NULL) {}
 
 template<typename T>
-List<T>::List() : _start(NULL), _size(0) {}
+List<T>::List() : _start(NULL) {}
 
 template<typename T>
 void List<T>::push_back(T data)
 {
-  if(_size == 0)
+  if(size() == 0)
   {
     _start = new Element(data);
   }
@@ -25,13 +25,12 @@ void List<T>::push_back(T data)
     }
     traverse->_next = new Element(data);
   }
-  ++_size;
 }
 
 template<typename T>
 void List<T>::print()
 {
-  if(_size == 0)
+  if(size() == 0)
   {
     std::cout<<"The list is empty!"<<std::endl;
     return;
@@ -49,6 +48,18 @@ void List<T>::print()
 template<typename T>
 int List<T>::size()
 {
-  return _size;
+  int size = 0;
+  if(_start == NULL)
+  {
+    return 0;
+  }
+
+  Element* traverse = _start;
+  while(traverse->_next != NULL)
+  {
+    ++size;
+    traverse = traverse->_next;
+  }
+  return size;
 }
 #endif
